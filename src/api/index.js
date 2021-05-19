@@ -1,10 +1,8 @@
 import axios from 'axios';
 
-const URL = "https://todo-backend-wakefit.herokuapp.com/posts";
+const URL = "https://trello-backend-app.herokuapp.com/tasks";
 
-//http://localhost:5000/posts
-//https://todo-backend-wakefit.herokuapp.com/posts
-export const fetchPosts = () => axios.get(URL);
-export const createPost = (newPost) => axios.post(`${URL}/createPost`, newPost);
-export const updatePost = (id, updatedPost) => axios.patch(`${URL}/${id}`, updatedPost);
-export const deletePost = (id) => axios.delete(`${URL}/${id}`);
+export const fetchTasks = () => axios.get(URL);
+export const createTask = (newPost) => axios.post(`${URL}/createTask`, newPost);
+export const updateTask = (id, updatedPost) => axios.patch(`${URL}/${id}`, updatedPost);
+export const deleteTask = (id) => axios.delete(`${URL}/${id}`);
