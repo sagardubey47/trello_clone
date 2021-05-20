@@ -2,7 +2,6 @@ import React,{useState} from 'react'
 import "./style.css"
 import {useDispatch} from "react-redux"
 import { createTask } from '../../actions/task';
-import { hideFormAction } from '../../actions/showOptions';
 
 const AddTask = ({showForm, setShowForm}) => {
 
