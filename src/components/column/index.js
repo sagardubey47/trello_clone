@@ -1,17 +1,14 @@
-import React from 'react'
+import React,{useState} from 'react'
 import AddTask from '../addTask'
 import TaskCard from '../taskCard'
-import {useDispatch} from "react-redux"
-import {useSelector} from "react-redux"
-import {showFormAction} from "../../actions/showOptions"
 import "./style.css"
 
 const Column = ({tasks, status, moveItem}) => {
 
-    const dispatch = useDispatch();
-    const {showForm} = useSelector((state) => state.showOptions);
+    const [showForm, setShowForm] = useState(false);
+  
     const handleShowForm = () => {
-      dispatch(showFormAction())
+        setShowForm((prev) => !prev)
     }
 
     return (
@@ -26,7 +23,7 @@ const Column = ({tasks, status, moveItem}) => {
          (
           <>
             <button className="add-task" onClick={handleShowForm}>+</button>
-            <AddTask showForm={showForm}/>
+            <AddTask showForm={showForm} setShowForm={setShowForm} />
          </>
          ) :
          null

@@ -1,18 +1,17 @@
-import React,{ useRef } from 'react'
+import React,{ useRef,useState } from 'react'
 import {useDispatch} from "react-redux"
 import moment from "moment"
 import {deleteTask} from "../../actions/task"
-import {useSelector} from "react-redux"
-import {hideModalAction, showModalAction} from "../../actions/showOptions"
 import "./style.css"
 import { useDrag, useDrop } from "react-dnd";
 import {ITEM_TYPE} from "../../constants/actionTypes"; 
 
 const TaskCard = ({task, moveItem, index}) => {
 
+    const [showModal, setShowModal] = useState(false);
+
     // data
-     const dispatch = useDispatch()
-     const {showModal} = useSelector((state) => state.showOptions);
+     const dispatch = useDispatch();
      const title = task.title ? task.title : "no title";
      const description = task.description ? task.description : "no description";
      const taskStatus = task.status ? task.status : "open";
@@ -67,11 +66,9 @@ const TaskCard = ({task, moveItem, index}) => {
 
     drag(drop(ref));
      
+    // helpher
      const handleClick = () => {
-         if(showModal)
-           dispatch(hideModalAction());
-         else
-            dispatch(showModalAction());  
+        setShowModal((prev) =>  !prev)
      }
 
      const handleDeleteTask = () => {

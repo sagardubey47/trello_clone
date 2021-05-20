@@ -31,9 +31,8 @@ function App() {
         };
 
     const moveItem = (dragIndex, hoverIndex) => {
-        console.log(dragIndex, hoverIndex);
+       
         const item = items[dragIndex];
-         console.log(item)
         setItems(prevState => {
             const newItems = prevState.filter((i, idx) => idx !== dragIndex);
             newItems.splice(hoverIndex, 0, item);
@@ -48,7 +47,7 @@ function App() {
             <Header />
             <main className="main-container">
               {statuses.map(s => {
-                console.log(items);
+               
                  return (
                          <DropWrapper key={s.status} onDrop={onDrop} status={s.status}>
                              <Column
@@ -67,36 +66,3 @@ function App() {
 }
 
 export default App;
-
-// import React, { useState } from "react";
-// import Item from "../components/Item";
-// import DropWrapper from "../components/DropWrapper";
-// import Col from "../components/Col";
-// import { data, statuses } from "../data";
-
-// const Homepage = () => {
-//     const [items, setItems] = useState(data);
-
-
-//     return (
-//         <div className={"row"}>
-//             {statuses.map(s => {
-//                 return (
-//                     <div key={status} className={"col-wrapper"}>
-//                         <h2 className={"col-header"}>{s.status.toUpperCase()}</h2>
-//                         <DropWrapper onDrop={onDrop} status={s.status}>
-//                             <Col>
-//                                 {items
-//                                     .filter(i => i.status === s.status)
-//                                     .map((i, idx) => <Item key={i.id} item={i} index={idx} moveItem={moveItem} status={s} />)
-//                                 }
-//                             </Col>
-//                         </DropWrapper>
-//                     </div>
-//                 );
-//             })}
-//         </div>
-//     );
-// };
-
-// export default Homepage;

@@ -4,7 +4,7 @@ import {useDispatch} from "react-redux"
 import { createTask } from '../../actions/task';
 import { hideFormAction } from '../../actions/showOptions';
 
-const AddTask = ({showForm}) => {
+const AddTask = ({showForm, setShowForm}) => {
 
     const dispatch = useDispatch();
     const [title, setTitle] = useState("");
@@ -23,7 +23,7 @@ const AddTask = ({showForm}) => {
            member,
            status,
        }));
-       dispatch(hideFormAction())
+       setShowForm(false);
     }
 
     return (
@@ -59,6 +59,7 @@ const AddTask = ({showForm}) => {
                 onChange={(e) => {setStatus(e.target.value)}}
             />
             <button type="submit"> add </button>
+            <button type="submit" onClick={() => {setShowForm(false)}}> cancel </button>
         </form>) :
         (null)
     )

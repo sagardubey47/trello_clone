@@ -25,3 +25,12 @@
     padding: 3px;
     text-transform: capitalize;
 }
+
+@media(max-width: 500px) {
+    .modal {
+        width: 320px;
+        left: 10px;
+        padding: 10px;
+    }
+
+}
