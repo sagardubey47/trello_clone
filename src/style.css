@@ -1,0 +1,50 @@
+:root {
+    --primaryColor: #7e7eec;
+    --secondaryColor: #e2e2e2;
+    --textColor: #f5f4f4;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'roboto', sans-serif;
+}
+
+.app {
+    min-height: 100vh;
+    background-color: var(--secondaryColor);
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.task-container {
+    margin: 20px;
+    padding: 10px 10px 50px;
+    background-color: var(--primaryColor);
+    position: relative;
+}
+
+.container-heading {
+    color: var(--textColor);
+    text-align: center;
+    padding: 5px;
+    border-bottom: 2px solid var(--secondaryColor);
+    border-radius: 50px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+button {
+    margin: 10px;
+    padding: 5px 15px;
+    color: var(--textColor);
+    background-color: var(--primaryColor);
+    border: solid 1px #7676af;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+} 

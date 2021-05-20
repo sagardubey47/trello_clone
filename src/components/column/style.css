@@ -1,0 +1,14 @@
+.add-task {
+    position: absolute;
+    bottom: 0px;
+    background-color: var(--textColor);
+    color: var(--primaryColor);
+    font-size: 1.5rem;
+    border: solid 1px #7676af;
+    border-radius: 12px 18px 3px 18px;
+}
+
+.add-task:hover {
+    background-color: #e8e8ee;
+    transform: scale(1.05);
+}

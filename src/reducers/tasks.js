@@ -1,7 +1,4 @@
-
-// eslint-disable-next-line import/no-anonymous-default-export
 import {FETCH_ALL, CREATE, UPDATE, DELETE} from "../constants/actionTypes";
-
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (tasks = [], action) => {

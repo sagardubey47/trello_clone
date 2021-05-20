@@ -1,0 +1,15 @@
+.task-form {
+    position: absolute;
+    background-color: #ffffff;
+    padding: 20px;
+    top: 10%;
+    left: 10%;
+    border-radius: 4px 40px;
+    border: solid 1px var(--primaryColor);
+}
+
+input {
+    border: solid 1px var(--primaryColor);
+    padding: 5px;
+}
+

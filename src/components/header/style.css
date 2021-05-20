@@ -1,0 +1,11 @@
+.header-container {
+    background-color: var(--primaryColor);
+    height: 10vh;
+    text-align: center;
+    line-height: 2;
+     color: var(--textColor);
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-family: 'Roboto Mono', monospace;
+}
