@@ -3,7 +3,7 @@ import AddTask from '../addTask'
 import TaskCard from '../taskCard'
 import "./style.css"
 
-const Column = ({tasks, status, moveItem}) => {
+const Column = ({tasks, status, moveItem, icon}) => {
 
     const [showForm, setShowForm] = useState(false);
   
@@ -16,7 +16,14 @@ const Column = ({tasks, status, moveItem}) => {
           <h4 className="container-heading">{`${status} task`}</h4>
           {
             tasks.map((task, idx) => {
-              return <TaskCard key={task._id} index={idx} task={task} status={status} moveItem={moveItem}/>
+              return <TaskCard 
+                         key={task._id} 
+                         index={idx} 
+                         task={task} 
+                         status={status} 
+                         icon={icon} 
+                         moveItem={moveItem}
+                         />
             })
           }
          { status === "open" ?

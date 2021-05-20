@@ -12,19 +12,19 @@ import Column from "./components/column"
 
 function App() { 
 
-  const dispatch = useDispatch();
- 
-  useEffect(() => {
-    dispatch(getTasks());
-  }, [dispatch])
-
-  const tasks = useSelector((state) => state.tasks);
-  const [items, setItems] = useState(tasks);
-
-  useEffect(() => {
-    setItems(tasks);
-  }, [tasks])
+    const dispatch = useDispatch();
   
+    useEffect(() => {
+      dispatch(getTasks());
+    }, [dispatch])
+
+    const tasks = useSelector((state) => state.tasks);
+    const [items, setItems] = useState(tasks);
+
+    useEffect(() => {
+      setItems(tasks);
+    }, [tasks])
+    
     const onDrop = (item, monitor, status) => {
             const newItem = {...item, status};
             dispatch(updateTask(item._id, newItem));
@@ -48,16 +48,17 @@ function App() {
             <main className="main-container">
               {statuses.map(s => {
                
-                 return (
-                         <DropWrapper key={s.status} onDrop={onDrop} status={s.status}>
-                             <Column
-                                key={s.status}
-                                status={s.status}
-                                moveItem={moveItem}
-                                tasks={items.filter(item => item.status === s.status)}
-                              />
-                         </DropWrapper>
-                 );
+                return (
+                    <DropWrapper key={s.status} onDrop={onDrop} status={s.status}>
+                        <Column
+                          key={s.status}
+                          status={s.status}
+                          icon={s.icon}
+                          moveItem={moveItem}
+                          tasks={items.filter(item => item.status === s.status)}
+                        />
+                    </DropWrapper>
+                );
              })}
             </main>
         </DndProvider> 

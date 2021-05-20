@@ -6,7 +6,7 @@ import "./style.css"
 import { useDrag, useDrop } from "react-dnd";
 import {ITEM_TYPE} from "../../constants/actionTypes"; 
 
-const TaskCard = ({task, moveItem, index}) => {
+const TaskCard = ({task, moveItem, index, icon}) => {
 
     const [showModal, setShowModal] = useState(false);
 
@@ -87,6 +87,7 @@ const TaskCard = ({task, moveItem, index}) => {
                 <p>{description}</p>
                 <p>status: {taskStatus}</p> 
                 <p>{moment(createdAt).fromNow()}</p>
+                <p className="icon">{icon}</p>
              </div>
              {
                  showModal? (

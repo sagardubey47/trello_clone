@@ -26,6 +26,10 @@
     text-transform: capitalize;
 }
 
+.icon {
+   text-align: right;
+}
+
 @media(max-width: 500px) {
     .modal {
         width: 320px;
