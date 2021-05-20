@@ -9,7 +9,7 @@ const AddTask = ({showForm, setShowForm}) => {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [memberRaw, setMember] = useState([]);
-    const [status, setStatus] = useState("open");
+    const [status, setStatus] = useState("");
 
     const handleSubmit = (e) => {
 
@@ -53,7 +53,7 @@ const AddTask = ({showForm, setShowForm}) => {
             <input 
                 type="text" 
                 name="status" 
-                placeholder="status eg: open, inprogress, completed"
+                placeholder="status eg: inprogress, completed"
                 value={status}    
                 onChange={(e) => {setStatus(e.target.value)}}
             />
