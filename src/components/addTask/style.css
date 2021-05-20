@@ -10,7 +10,8 @@
 
 input {
     border: solid 1px var(--primaryColor);
-    padding: 5px 15px;
+    padding: 7px 17px;
     margin: 5px;
+    border-radius: 6px;
 }
 
